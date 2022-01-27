@@ -17,14 +17,17 @@ public class Main {
         Session context = SessionFactoryHibername.getSessionFactory().openSession();
         System.out.println("Connection success.");
         //-----Add new category-----
-        Scanner in = new Scanner(System.in, "UTF-8");
-        //System.out.println("Enter category name:");
-        //Categories cat = new Categories();
-        //cat.setName(in.nextLine());
-        //context.save(cat);
+        //catInstance.addNewCategoryItem(context);
 
         //----Show all instance in database----
-        catInstance.fetchDataCategotyTable(context);
+        //catInstance.fetchDataCategoryTable(context);
+
+        //----Update Category name------
+        //catInstance.updateCategoryItem(context);
+
+        //----Delete Category----
+
+
         context.close();
     }
 }
