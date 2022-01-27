@@ -26,6 +26,7 @@ public class Main {
         //catInstance.updateCategoryItem(context);
 
         //----Delete Category----
+        catInstance.deleteCategoryItem(context);
 
 
         context.close();

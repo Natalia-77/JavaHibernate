@@ -53,14 +53,12 @@ public class CategoryTableInstance {
     public void deleteCategoryItem(Session session){
        session.beginTransaction();
         System.out.println("Enter id Category for delete : ");
-        int idResult = in.nextInt();
+        int idDel = in.nextInt();
         try {
-            Categories categoriesEdit = (Categories) session.find(Categories.class, idResult);
-            entityExceptionNull(categoriesEdit);
-            System.out.println("Enter new name: ");
-            String newName = in.next();
-            categoriesEdit.setName(newName);
-            session.saveOrUpdate(categoriesEdit);
+            Categories categoriesDel = session.find(Categories.class, idDel);
+            entityExceptionNull(categoriesDel);
+            session.delete(categoriesDel);
+            System.out.println("Deleted successfully!");
             session.getTransaction().commit();
 
         } catch (ExceptionEntityData e) {

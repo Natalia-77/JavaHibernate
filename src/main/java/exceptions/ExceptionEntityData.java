@@ -14,11 +14,8 @@ public class ExceptionEntityData extends Throwable {
     }
 
     public static void entityExceptionNull(Object cat) throws ExceptionEntityData {
-        if (cat instanceof Categories){
-            if (cat == null) {
-                throw new ExceptionEntityData("The Category with that id not found!");
-            }
+        if (cat == null) {
+            throw new ExceptionEntityData("The instance with that id not found!");
         }
-
     }
 }
