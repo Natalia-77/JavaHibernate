@@ -15,28 +15,28 @@ public class Main {
         Session context = SessionFactoryHibername.getSessionFactory().openSession();
         System.out.println("Connection success.");
         //-----Add new category-----
-        //catInstance.addNewCategoryItem(context);
+        catInstance.addNewCategoryItem(context);
 
         //----Show all instance in database----
-        //catInstance.fetchDataCategoryTable(context);
+        catInstance.fetchDataCategoryTable(context);
 
         //----Update Category name----
-        //catInstance.updateCategoryItem(context);
+        catInstance.updateCategoryItem(context);
 
         //----Delete Category----
-        //catInstance.deleteCategoryItem(context);
+        catInstance.deleteCategoryItem(context);
 
         //----Add new Product----
-        //productTableInstance.addNewProductItem(context);
+        productTableInstance.addNewProductItem(context);
 
         //----Show all products----
-        //productTableInstance.fetchDataProductTable(context);
+        productTableInstance.fetchDataProductTable(context);
 
         //---Update Product name---
-        //productTableInstance.updateProductItem(context);
+        productTableInstance.updateProductItem(context);
 
         //---Delete Product---
-        //productTableInstance.deleteProductItem(context);
+        productTableInstance.deleteProductItem(context);
 
         context.close();
     }
