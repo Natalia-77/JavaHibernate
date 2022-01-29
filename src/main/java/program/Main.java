@@ -1,18 +1,16 @@
 package program;
 
 import app.CategoryTableInstance;
-import models.Categories;
+import app.ProductTableInstance;
 import org.hibernate.Session;
 import utils.SessionFactoryHibername;
-
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws UnsupportedEncodingException {
         CategoryTableInstance catInstance = new CategoryTableInstance();
+        ProductTableInstance productTableInstance = new ProductTableInstance();
         System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Session context = SessionFactoryHibername.getSessionFactory().openSession();
         System.out.println("Connection success.");
@@ -22,12 +20,23 @@ public class Main {
         //----Show all instance in database----
         //catInstance.fetchDataCategoryTable(context);
 
-        //----Update Category name------
+        //----Update Category name----
         //catInstance.updateCategoryItem(context);
 
         //----Delete Category----
-        catInstance.deleteCategoryItem(context);
+        //catInstance.deleteCategoryItem(context);
 
+        //----Add new Product----
+        //productTableInstance.addNewProductItem(context);
+
+        //----Show all products----
+        //productTableInstance.fetchDataProductTable(context);
+
+        //---Update Product name---
+        //productTableInstance.updateProductItem(context);
+
+        //---Delete Product---
+        //productTableInstance.deleteProductItem(context);
 
         context.close();
     }

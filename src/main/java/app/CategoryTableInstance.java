@@ -6,9 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Scanner;
-
-
 import static exceptions.ExceptionEntityData.entityExceptionNull;
+
 
 public class CategoryTableInstance {
 

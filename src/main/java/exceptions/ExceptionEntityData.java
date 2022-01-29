@@ -2,7 +2,7 @@ package exceptions;
 
 import lombok.Getter;
 import lombok.Setter;
-import models.Categories;
+
 
 @Getter
 @Setter
@@ -13,8 +13,8 @@ public class ExceptionEntityData extends Throwable {
         this.message = message;
     }
 
-    public static void entityExceptionNull(Object cat) throws ExceptionEntityData {
-        if (cat == null) {
+    public static void entityExceptionNull(Object obj) throws ExceptionEntityData {
+        if (obj == null) {
             throw new ExceptionEntityData("The instance with that id not found!");
         }
     }
