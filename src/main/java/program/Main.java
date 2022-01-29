@@ -1,6 +1,7 @@
 package program;
 
 import app.CategoryTableInstance;
+import app.OrderTableInstance;
 import app.ProductTableInstance;
 import org.hibernate.Session;
 import utils.SessionFactoryHibername;
@@ -11,32 +12,36 @@ public class Main {
     public static void main(String[] args) throws UnsupportedEncodingException {
         CategoryTableInstance catInstance = new CategoryTableInstance();
         ProductTableInstance productTableInstance = new ProductTableInstance();
+        OrderTableInstance orderTableInstance = new OrderTableInstance();
         System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Session context = SessionFactoryHibername.getSessionFactory().openSession();
         System.out.println("Connection success.");
         //-----Add new category-----
-        catInstance.addNewCategoryItem(context);
+        //catInstance.addNewCategoryItem(context);
 
         //----Show all instance in database----
-        catInstance.fetchDataCategoryTable(context);
+        //catInstance.fetchDataCategoryTable(context);
 
         //----Update Category name----
-        catInstance.updateCategoryItem(context);
+        //catInstance.updateCategoryItem(context);
 
         //----Delete Category----
-        catInstance.deleteCategoryItem(context);
+        //catInstance.deleteCategoryItem(context);
 
         //----Add new Product----
-        productTableInstance.addNewProductItem(context);
+        //productTableInstance.addNewProductItem(context);
 
         //----Show all products----
-        productTableInstance.fetchDataProductTable(context);
+        //productTableInstance.fetchDataProductTable(context);
 
         //---Update Product name---
-        productTableInstance.updateProductItem(context);
+        //productTableInstance.updateProductItem(context);
 
         //---Delete Product---
         productTableInstance.deleteProductItem(context);
+
+        //---Add new order----
+        //orderTableInstance.addNewOrder(context);
 
         context.close();
     }

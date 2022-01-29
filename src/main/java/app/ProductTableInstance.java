@@ -40,6 +40,7 @@ public class ProductTableInstance {
         Categories cat = new Categories();
         cat.setId(listId.get(index));
         product.setCategories(cat);
+
         session.save(product);
         session.getTransaction().commit();
     }

@@ -2,8 +2,8 @@ package models;
 
 import lombok.*;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -29,8 +29,17 @@ public class Product {
 
     @ManyToMany(cascade=CascadeType.MERGE)
     @JoinTable(name="tbl_product_orders",
-            joinColumns = {@JoinColumn(name="product_id",referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name="order_id",referencedColumnName = "id")})
-     private List<Orders> orders=new ArrayList<>();
+            joinColumns = {@JoinColumn(name="product_id")},
+            inverseJoinColumns = {@JoinColumn(name="order_id")})
+     private Set<Orders> orders=new HashSet<>();
+
+    public Set<Orders> getOrders () {
+        return orders;
+    }
+
+    public void setOrders(Set<Orders> order) {
+        this.orders = order;
+    }
+
 
 }
